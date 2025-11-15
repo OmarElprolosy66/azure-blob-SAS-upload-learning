@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+    api:
+        build: .
+        ports:
+            - "3000:3000"
+        depends_on:
+            - azurite
+        environment:
+            - AZURE_STORAGE_CONNECTION_STRING=DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://azurite:10000/devstoreaccount1;
+            - AZURE_STORAGE_ACCOUNT_NAME=devstoreaccount1
+            - AZURE_STORAGE_ACCOUNT_KEY=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZvxR/WLmM/w/wUPPAttGBSNaWOTU3BPoW/TNVmbsetYg==
+        volumes:
+            - .:/usr/src/app
+            - /usr/src/app/node_modules
+        command: npm run dev
+    azurite:
+        image: mcr.microsoft.com/azure-storage/azurite:latest
+        ports:
+            - "10000:10000" # Blob Service
+            - "10001:10001" # Queue Service
+            - "10002:10002" # Table Servic
+        command: azurite --blobHost 0.0.0.0 --skipApiVersionCheck

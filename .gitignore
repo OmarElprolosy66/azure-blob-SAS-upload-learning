@@ -1,0 +1,56 @@
+# Node dependencies
+node_modules/
+
+# TypeScript build output
+dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# Editors
+.vscode/
+.idea/
+
+# Coverage
+coverage/
+*.lcov
+
+# Temporary
+.tmp/
+.temp/
+*.swp
+
+# Azurite local data (if you use local path)
+azurite-data/
+
+# TypeScript metadata
+*.tsbuildinfo
+
+# Docker artifacts
+**/*.tar
+
+# Optional caches
+.cache/
+.eslintcache
+
+# Build artifacts
+*.tgz
+
+# Ignore generated PNG test files if added someday
+*.generated.png
+
+# Ignore any local test scripts
+test-output/
