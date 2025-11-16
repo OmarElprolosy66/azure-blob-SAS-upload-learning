@@ -26,8 +26,8 @@ This repository is deliberately verbose in code comments for beginners who know 
 
 ### 1.2 Clone the Repository
 ```bash
-git clone <your-fork-or-this-repo-url> azur-test
-cd azur-test
+git clone https://github.com/OmarElprolosy66/azure-blob-SAS-upload-learning.git azure-blob-SAS-upload-learning
+cd azure-blob-SAS-upload-learning
 ```
 
 ### 1.3 Install Dependencies
